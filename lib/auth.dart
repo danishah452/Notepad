@@ -13,6 +13,7 @@ final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
 Future<bool> signInWithGoogle(BuildContext context) async {
   try {
+    googleSignIn.disconnect();
     final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
 
     if (googleSignInAccount != null) {
